@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TaskList</string>
+    <string name="task_name">Task name</string>
+    <string name="task_desc">Task description</string>
+    <string name="add_task">Add task</string>
+    <string name="task_name_det">Task Name:</string>
+    <string name="task_desc_det">Task description:</string>
+    <string name="task_completed">Task completed:</string>
+    <string name="remove">Remove</string>
+</resources>
