@@ -17,11 +17,12 @@ public class OrmliteDatabaseConfigUtil extends OrmLiteConfigUtil {
     /**
      * classes represents the models to use for generating the ormlite_config.txt file
      */
-    private static final Class<?>[] classes = new Class[] {Task.class};
+    private static final Class<?>[] classes = new Class[]{Task.class};
 
     /**
      * Given that this is a separate program from the android app, we have to use
      * a static main java method to create the configuration file.
+     *
      * @param args
      * @throws IOException
      * @throws SQLException
@@ -49,7 +50,7 @@ public class OrmliteDatabaseConfigUtil extends OrmLiteConfigUtil {
          * In the a scenario where we run this program serveral times, it will recreate the
          * configuration file each time with the updated configurations.
          */
-        if(configFile.exists()) {
+        if (configFile.exists()) {
             configFile.delete();
             configFile = new File(fullConfigPath);
         }

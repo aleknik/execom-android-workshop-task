@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.example.aleph.tasklist.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import model.Task;
 
@@ -38,8 +37,7 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
         // Populate the data into the template view using the data object
         taskName.setText(task.getName());
 
-        if (task.isDone())
-        {
+        if (task.isDone()) {
             taskStatus.setImageResource(R.drawable.ic_check_black_24dp);
         } else {
             taskStatus.setImageDrawable(null);

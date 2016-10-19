@@ -21,7 +21,8 @@ public class Task {
     @DatabaseField
     private boolean done;
 
-    public Task() {}
+    public Task() {
+    }
 
     public Task(String name, String description, boolean done) {
         this.name = name;

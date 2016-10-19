@@ -16,6 +16,6 @@
         android:textSize="35sp"
         android:layout_gravity="start"
         android:ellipsize="end"
-        android:maxLines="1"/>
+        android:maxLines="1" />
 
 </LinearLayout>

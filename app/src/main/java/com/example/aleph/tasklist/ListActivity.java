@@ -3,14 +3,12 @@ package com.example.aleph.tasklist;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import java.sql.SQLException;
 
 import adapters.TaskListAdapter;
 import model.Repository;
@@ -22,6 +20,7 @@ public class ListActivity extends AppCompatActivity {
 
     public static final String CURR_TASK = "currentTask";
     public static final String TASK = "task";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

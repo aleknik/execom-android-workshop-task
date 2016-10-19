@@ -59,8 +59,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     }
 
-    public  Dao<Task, Long> getDao() throws SQLException {
-        if(dao == null) {
+    public Dao<Task, Long> getDao() throws SQLException {
+        if (dao == null) {
             dao = getDao(Task.class);
         }
         return dao;

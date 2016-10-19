@@ -1,10 +1,9 @@
 package com.example.aleph.tasklist;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -33,7 +32,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         Button remove = (Button) findViewById(R.id.remove_btn);
 
         SharedPreferences sharedPref = getSharedPreferences(ListActivity.TASK, Context.MODE_PRIVATE);
-        String name = sharedPref.getString(ListActivity.CURR_TASK,  null);
+        String name = sharedPref.getString(ListActivity.CURR_TASK, null);
 
         task = Repository.getInstance(this).getTaskByName(name);
 
@@ -83,8 +82,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
     }
 
     private void checkBoxAction(boolean isChecked) {
-        if  (isChecked)
-        {
+        if (isChecked) {
             task.setDone(true);
         } else {
             task.setDone(false);

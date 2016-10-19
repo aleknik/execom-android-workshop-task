@@ -56,9 +56,8 @@ public class Repository {
         }
     }
 
-   public static Repository getInstance(Context ctx) {
-        if (repo == null)
-        {
+    public static Repository getInstance(Context ctx) {
+        if (repo == null) {
             try {
                 repo = new Repository(ctx);
             } catch (SQLException e) {

@@ -31,16 +31,21 @@ public class AddTaskActivity extends AppCompatActivity {
     }
 
     private void addButtonClickAction() {
-        Task task = new Task(taskName.getText().toString(), taskDesc.getText().toString(), false);
 
         Repository repo = Repository.getInstance(AddTaskActivity.this);
 
-        repo.addTask(task);
+        if (taskName.getText().toString().trim().equals("")) {
+            taskName.setError("Task name is required!");
 
-        //Intent intent = new Intent(AddTaskActivity.this, ListActivity.class);
-        //startActivity(intent);
+        } else if (repo.getTaskByName(taskName.getText().toString()) != null) {
+            taskName.setError("Task name must be unique!");
+        } else {
 
-        finish();
+            Task task = new Task(taskName.getText().toString(), taskDesc.getText().toString(), false);
+            repo.addTask(task);
+
+            finish();
+        }
     }
 
     private void init() {
