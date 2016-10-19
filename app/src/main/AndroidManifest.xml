@@ -8,15 +8,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListActivity">
+        <activity android:name=".activity.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddTaskActivity" />
-        <activity android:name=".TaskDetailsActivity" />
+        <activity android:name=".activity.AddTaskActivity" />
+        <activity android:name=".activity.TaskDetailsActivity" />
     </application>
 
 </manifest>

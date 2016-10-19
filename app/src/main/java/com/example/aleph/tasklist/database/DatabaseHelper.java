@@ -1,9 +1,10 @@
-package database;
+package com.example.aleph.tasklist.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.aleph.tasklist.R;
+import com.example.aleph.tasklist.model.Task;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
@@ -11,7 +12,6 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
-import model.Task;
 
 /**
  * Created by alepH on 10/18/2016.
@@ -34,7 +34,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         try {
 
             /**
-             * creates the Todo database table
+             * creates the Todo com.example.aleph.tasklist.database table
              */
             TableUtils.createTable(connectionSource, Task.class);
 
@@ -48,7 +48,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
                           int oldVersion, int newVersion) {
         try {
             /**
-             * Recreates the database when onUpgrade is called by the framework
+             * Recreates the com.example.aleph.tasklist.database when onUpgrade is called by the framework
              */
             TableUtils.dropTable(connectionSource, Task.class, false);
             onCreate(database, connectionSource);

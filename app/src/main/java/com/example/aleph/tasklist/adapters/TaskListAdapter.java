@@ -1,4 +1,4 @@
-package adapters;
+package com.example.aleph.tasklist.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import com.example.aleph.tasklist.R;
 
 import java.util.ArrayList;
 
-import model.Task;
+import com.example.aleph.tasklist.model.Task;
 
 /**
  * Created by alepH on 10/18/2016.

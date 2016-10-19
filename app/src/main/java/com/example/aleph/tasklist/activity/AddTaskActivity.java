@@ -1,4 +1,4 @@
-package com.example.aleph.tasklist;
+package com.example.aleph.tasklist.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import model.Repository;
-import model.Task;
+import com.example.aleph.tasklist.R;
+
+import com.example.aleph.tasklist.database.Repository;
+import com.example.aleph.tasklist.model.Task;
 
 public class AddTaskActivity extends AppCompatActivity {
 

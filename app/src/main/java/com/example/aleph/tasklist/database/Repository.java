@@ -1,4 +1,4 @@
-package database;
+package com.example.aleph.tasklist.database;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import com.j256.ormlite.dao.Dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.Task;
+import com.example.aleph.tasklist.model.Task;
 
 public class Repository {
     private ArrayList<Task> tasks = new ArrayList<>();

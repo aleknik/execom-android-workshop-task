@@ -1,4 +1,4 @@
-package com.example.aleph.tasklist;
+package com.example.aleph.tasklist.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,8 +11,10 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import model.Repository;
-import model.Task;
+import com.example.aleph.tasklist.R;
+
+import com.example.aleph.tasklist.database.Repository;
+import com.example.aleph.tasklist.model.Task;
 
 public class TaskDetailsActivity extends AppCompatActivity {
 

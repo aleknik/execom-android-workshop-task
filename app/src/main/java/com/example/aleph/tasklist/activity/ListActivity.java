@@ -1,4 +1,4 @@
-package com.example.aleph.tasklist;
+package com.example.aleph.tasklist.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import adapters.TaskListAdapter;
-import model.Repository;
-import model.Task;
+import com.example.aleph.tasklist.R;
+
+import com.example.aleph.tasklist.adapters.TaskListAdapter;
+import com.example.aleph.tasklist.database.Repository;
+import com.example.aleph.tasklist.model.Task;
 
 public class ListActivity extends AppCompatActivity {
     private ListView tasks;
