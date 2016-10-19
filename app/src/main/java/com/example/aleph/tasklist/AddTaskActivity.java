@@ -1,13 +1,10 @@
 package com.example.aleph.tasklist;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import java.sql.SQLException;
 
 import model.Repository;
 import model.Task;
@@ -28,18 +25,22 @@ public class AddTaskActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Task task = new Task(taskName.getText().toString(), taskDesc.getText().toString(), false);
-
-                Repository repo = Repository.getInstance(AddTaskActivity.this);
-
-                repo.addTask(task);
-
-                //Intent intent = new Intent(AddTaskActivity.this, ListActivity.class);
-                //startActivity(intent);
-
-                finish();
+                addButtonClickAction();
             }
         });
+    }
+
+    private void addButtonClickAction() {
+        Task task = new Task(taskName.getText().toString(), taskDesc.getText().toString(), false);
+
+        Repository repo = Repository.getInstance(AddTaskActivity.this);
+
+        repo.addTask(task);
+
+        //Intent intent = new Intent(AddTaskActivity.this, ListActivity.class);
+        //startActivity(intent);
+
+        finish();
     }
 
     private void init() {

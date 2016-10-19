@@ -1,9 +1,11 @@
 package com.example.aleph.tasklist;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,7 +21,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
     private TextView name;
     private TextView desc;
     private Task task;
-    private Button remove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         completed = (CheckBox) findViewById(R.id.chkCompleted);
         name = (TextView) findViewById(R.id.task_name_det);
         desc = (TextView) findViewById(R.id.task_desc_det);
-        remove = (Button) findViewById(R.id.remove_btn);
+        Button remove = (Button) findViewById(R.id.remove_btn);
 
         SharedPreferences sharedPref = getSharedPreferences(ListActivity.TASK, Context.MODE_PRIVATE);
         String name = sharedPref.getString(ListActivity.CURR_TASK,  null);
@@ -54,6 +55,18 @@ public class TaskDetailsActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; goto parent activity.
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void onClickAction() {

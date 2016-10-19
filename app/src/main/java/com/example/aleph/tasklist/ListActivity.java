@@ -21,7 +21,7 @@ public class ListActivity extends AppCompatActivity {
     public static TaskListAdapter adapter;
 
     public static final String CURR_TASK = "currentTask";
-    public static final String TASK = "ctask";
+    public static final String TASK = "task";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

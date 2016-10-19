@@ -7,13 +7,8 @@ import com.j256.ormlite.dao.Dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import database.DatabaseHelper;
-
-/**
- * Created by alepH on 10/18/2016.
- */
 
 public class Repository {
     private ArrayList<Task> tasks = new ArrayList<>();
@@ -29,9 +24,7 @@ public class Repository {
 
         databaseHelper = OpenHelperManager.getHelper(ctx.getApplicationContext(),
                 DatabaseHelper.class);
-
         dao = databaseHelper.getDao();
-
         tasks = (ArrayList<Task>) dao.queryForAll();
 
     }
@@ -46,9 +39,10 @@ public class Repository {
     }
 
     public void removeTask(Task task) {
-        tasks.remove(task);
+
         try {
             dao.delete(task);
+            tasks.remove(task);
         } catch (SQLException e) {
             e.printStackTrace();
         }
