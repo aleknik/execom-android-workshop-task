@@ -1,4 +1,4 @@
-package model;
+package database;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import com.j256.ormlite.dao.Dao;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import database.DatabaseHelper;
+import model.Task;
 
 public class Repository {
     private ArrayList<Task> tasks = new ArrayList<>();
