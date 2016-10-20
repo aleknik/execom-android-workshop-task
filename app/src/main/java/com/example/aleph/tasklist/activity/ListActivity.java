@@ -20,8 +20,7 @@ public class ListActivity extends AppCompatActivity {
     private ListView tasks;
     public static TaskListAdapter adapter;
 
-    public static final String CURR_TASK = "currentTask";
-    public static final String TASK = "task";
+    public static final String TASK_NAME = "task";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +55,8 @@ public class ListActivity extends AppCompatActivity {
     private void onItemCLickedAction(int position) {
         Task task = (Task) tasks.getItemAtPosition(position);
 
-        SharedPreferences sharedPref = getSharedPreferences(TASK, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(CURR_TASK, task.getName());
-        editor.apply();
-
         Intent intent = new Intent(this, TaskDetailsActivity.class);
+        intent.putExtra(TASK_NAME, task.getName());
         startActivity(intent);
     }
 }

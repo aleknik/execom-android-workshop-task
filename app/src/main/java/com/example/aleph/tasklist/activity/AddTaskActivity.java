@@ -2,6 +2,7 @@ package com.example.aleph.tasklist.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,15 +38,13 @@ public class AddTaskActivity extends AppCompatActivity {
         Repository repo = Repository.getInstance(AddTaskActivity.this);
 
         if (taskName.getText().toString().trim().equals("")) {
-            taskName.setError("Task name is required!");
+            taskName.setError(getString(R.string.name_required));
 
         } else if (repo.getTaskByName(taskName.getText().toString()) != null) {
-            taskName.setError("Task name must be unique!");
+            taskName.setError(getString(R.string.name_unique));
         } else {
-
             Task task = new Task(taskName.getText().toString(), taskDesc.getText().toString(), false);
             repo.addTask(task);
-
             finish();
         }
     }
@@ -54,5 +53,8 @@ public class AddTaskActivity extends AppCompatActivity {
         addButton = (Button) findViewById(R.id.add_button);
         taskName = (EditText) findViewById(R.id.task_name);
         taskDesc = (EditText) findViewById(R.id.task_desc);
+
+        taskName.setSelection(taskName.getText().length());
+        taskDesc.setSelection(taskDesc.getText().length());
     }
 }
