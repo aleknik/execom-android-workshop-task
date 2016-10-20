@@ -21,7 +21,8 @@
                 android:text="@string/task_name_det" />
 
             <EditText
-                android:inputType="text"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
                 android:id="@+id/task_name_det"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -38,7 +39,8 @@
                 android:text="@string/task_desc_det" />
 
             <EditText
-                android:inputType="text"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
                 android:id="@+id/task_desc_det"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

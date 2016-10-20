@@ -20,12 +20,14 @@
 
         <EditText
             android:id="@+id/task_name"
+            android:maxLines="3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/task_name" />
 
         <EditText
             android:id="@+id/task_desc"
+            android:maxLines="3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/task_desc" />
