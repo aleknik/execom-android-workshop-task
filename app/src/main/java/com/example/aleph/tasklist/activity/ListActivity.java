@@ -1,8 +1,6 @@
 package com.example.aleph.tasklist.activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -11,16 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.aleph.tasklist.R;
-
 import com.example.aleph.tasklist.adapters.TaskListAdapter;
 import com.example.aleph.tasklist.database.Repository;
 import com.example.aleph.tasklist.model.Task;
 
 public class ListActivity extends AppCompatActivity {
-    private ListView tasks;
-    public static TaskListAdapter adapter;
-
     public static final String TASK_NAME = "task";
+    public static TaskListAdapter adapter;
+    private ListView tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

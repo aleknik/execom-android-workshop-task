@@ -2,18 +2,16 @@ package com.example.aleph.tasklist.database;
 
 import android.content.Context;
 
+import com.example.aleph.tasklist.model.Task;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.example.aleph.tasklist.model.Task;
-
 public class Repository {
-    private ArrayList<Task> tasks = new ArrayList<>();
-
     private static Repository repo = null;
+    private ArrayList<Task> tasks = new ArrayList<>();
     private Dao<Task, Long> dao;
 
     private Repository(Context ctx) throws SQLException {
@@ -23,6 +21,17 @@ public class Repository {
         dao = databaseHelper.getDao();
         tasks = (ArrayList<Task>) dao.queryForAll();
 
+    }
+
+    public static Repository getInstance(Context ctx) {
+        if (repo == null) {
+            try {
+                repo = new Repository(ctx);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return repo;
     }
 
     public void addTask(Task task) {
@@ -50,30 +59,6 @@ public class Repository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static Repository getInstance(Context ctx) {
-        if (repo == null) {
-            try {
-                repo = new Repository(ctx);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return repo;
-    }
-
-
-    public ArrayList<String> getNameList() {
-        ArrayList<String> names = new ArrayList<>();
-
-        ArrayList<Task> tasks = getTasks();
-
-        for (Task task : tasks) {
-            names.add(task.getName());
-        }
-
-        return names;
     }
 
     public Task getTaskByName(String name) {

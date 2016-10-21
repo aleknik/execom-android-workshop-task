@@ -1,12 +1,11 @@
 package com.example.aleph.tasklist.database;
 
+import com.example.aleph.tasklist.model.Task;
 import com.j256.ormlite.android.apptools.OrmLiteConfigUtil;
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-
-import com.example.aleph.tasklist.model.Task;
 
 /**
  * Created by alepH on 10/18/2016.

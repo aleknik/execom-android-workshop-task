@@ -9,10 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aleph.tasklist.R;
+import com.example.aleph.tasklist.model.Task;
 
 import java.util.ArrayList;
-
-import com.example.aleph.tasklist.model.Task;
 
 /**
  * Created by alepH on 10/18/2016.
