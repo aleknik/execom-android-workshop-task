@@ -15,6 +15,7 @@ import com.example.aleph.tasklist.model.Task;
 public class AddTaskActivity extends AppCompatActivity {
 
     private Button addButton;
+    private Button cancelButton;
     private EditText taskName;
     private EditText taskDesc;
 
@@ -31,6 +32,15 @@ public class AddTaskActivity extends AppCompatActivity {
                 addButtonClickAction();
             }
         });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 
     private void addButtonClickAction() {
@@ -51,6 +61,7 @@ public class AddTaskActivity extends AppCompatActivity {
 
     private void init() {
         addButton = (Button) findViewById(R.id.add_button);
+        cancelButton = (Button) findViewById(R.id.cancel_button);
         taskName = (EditText) findViewById(R.id.task_name);
         taskDesc = (EditText) findViewById(R.id.task_desc);
 

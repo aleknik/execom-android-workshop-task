@@ -14,15 +14,11 @@ public class Repository {
     private ArrayList<Task> tasks = new ArrayList<>();
 
     private static Repository repo = null;
-
-    private DatabaseHelper databaseHelper;
-
     private Dao<Task, Long> dao;
-
 
     private Repository(Context ctx) throws SQLException {
 
-        databaseHelper = OpenHelperManager.getHelper(ctx.getApplicationContext(),
+        DatabaseHelper databaseHelper = OpenHelperManager.getHelper(ctx.getApplicationContext(),
                 DatabaseHelper.class);
         dao = databaseHelper.getDao();
         tasks = (ArrayList<Task>) dao.queryForAll();
